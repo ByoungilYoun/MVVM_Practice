@@ -16,6 +16,7 @@
 		0FED55E6268A207A0098E1D2 /* MVVM_PracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED55E5268A207A0098E1D2 /* MVVM_PracticeTests.swift */; };
 		0FED55F1268A207A0098E1D2 /* MVVM_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FED55F0268A207A0098E1D2 /* MVVM_PracticeUITests.swift */; };
 		0FED5600268A21090098E1D2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FED55FF268A21090098E1D2 /* SnapKit */; };
+		0FF89B75268A2BDC00BDF3EC /* UtcTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF89B74268A2BDC00BDF3EC /* UtcTimeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		0FED55EC268A207A0098E1D2 /* MVVM_PracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVM_PracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FED55F0268A207A0098E1D2 /* MVVM_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_PracticeUITests.swift; sourceTree = "<group>"; };
 		0FED55F2268A207A0098E1D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FF89B74268A2BDC00BDF3EC /* UtcTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtcTimeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				0FED55CE268A20790098E1D2 /* AppDelegate.swift */,
 				0FED55D0268A20790098E1D2 /* SceneDelegate.swift */,
+				0FF89B74268A2BDC00BDF3EC /* UtcTimeModel.swift */,
 				0FED55D2268A20790098E1D2 /* ViewController.swift */,
 				0FED55D4268A20790098E1D2 /* Main.storyboard */,
 				0FED55D7268A207A0098E1D2 /* Assets.xcassets */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FED55D3268A20790098E1D2 /* ViewController.swift in Sources */,
+				0FF89B75268A2BDC00BDF3EC /* UtcTimeModel.swift in Sources */,
 				0FED55CF268A20790098E1D2 /* AppDelegate.swift in Sources */,
 				0FED55D1268A20790098E1D2 /* SceneDelegate.swift in Sources */,
 			);
