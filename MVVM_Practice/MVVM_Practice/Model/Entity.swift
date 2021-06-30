@@ -1,5 +1,5 @@
 //
-//  Repository.swift
+//  UtcDateModel.swift
 //  MVVM_Practice
 //
 //  Created by 윤병일 on 2021/06/29.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repository : Codable {
+struct UtcDateModel : Codable { // 서버로부터 온 모델 
   let id : String
   let currentDateTime : String
   let utcOffset : String

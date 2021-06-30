@@ -13,7 +13,7 @@ class ViewController: UIViewController {
   //MARK: - Properties
   private let dateTimeLabel : UILabel = {
     let lb = UILabel()
-    lb.text = "2021년 06월 29일 12시 23분"
+    lb.text = ""
     lb.textColor = .black
     lb.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     return lb
@@ -43,10 +43,19 @@ class ViewController: UIViewController {
     return bt
   }()
   
+  let viewModel = ViewModel()
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setUI()
+    
+    // viewcontroller 에서는 viewmodel 만 바라보고 viewmodel 의 값이 변경되면 화면에 세팅하는 작업만 하면 된다.
+    viewModel.onUpdated = { [weak self] in
+      DispatchQueue.main.async {
+        self?.dateTimeLabel.text = self?.viewModel.dateTimeString
+      }
+    }
+    viewModel.relaod()
   }
 
   //MARK: - Functions
@@ -87,15 +96,16 @@ class ViewController: UIViewController {
 
   //MARK: - @objc func
   @objc func yesterDayBtnTapped() {
-    
+    viewModel.moveDay(day : -1)
   }
   
   @objc func nowBtnTapped() {
-    
+    dateTimeLabel.text = "Loading.."
+    viewModel.relaod()
   }
   
   @objc func tomorrowBtnTapped() {
-    
+    viewModel.moveDay(day : 1)
   }
 }
 
