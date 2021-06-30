@@ -43,13 +43,10 @@ class ViewController: UIViewController {
     return bt
   }()
   
-  private var currentDateTime = Date()
-  
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     setUI()
-    fetchNow()
   }
 
   //MARK: - Functions
@@ -86,47 +83,19 @@ class ViewController: UIViewController {
     }
   }
   
-  private func fetchNow() {
-    let url = "http://worldclockapi.com/api/json/utc/now"
-    
-    dateTimeLabel.text = "Loading.."
-    
-    URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] data, _, _ in
-      guard let data = data else {return}
-      guard let model = try? JSONDecoder().decode(UtcTimeModel.self, from: data) else {return}
-      
-      let formatter = DateFormatter()
-      formatter.dateFormat = "yyyy-MM-dd'T'HH:mm'Z'"
-      
-      guard let now = formatter.date(from: model.currentDateTime) else {return}
-      self?.currentDateTime = now
-      
-      DispatchQueue.main.async {
-        self?.updateDateTime()
-      }
-    }.resume()
-  }
   
-  private func updateDateTime() {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분"
-    dateTimeLabel.text = formatter.string(from: currentDateTime)
-  }
+
   //MARK: - @objc func
-  @objc private func yesterDayBtnTapped() {
-    guard let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: currentDateTime) else {return}
-    currentDateTime = yesterday
-    updateDateTime()
+  @objc func yesterDayBtnTapped() {
+    
   }
   
-  @objc private func nowBtnTapped() {
-    fetchNow()
+  @objc func nowBtnTapped() {
+    
   }
   
-  @objc private func tomorrowBtnTapped() {
-    guard let tomorrow = Calendar.current.date(byAdding: .day, value: +1, to: currentDateTime) else {return}
-    currentDateTime = tomorrow
-    updateDateTime()
+  @objc func tomorrowBtnTapped() {
+    
   }
 }
 
